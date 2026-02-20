@@ -1,9 +1,8 @@
-este es el codigo en app.tsx
-
 import React, { useState, useMemo, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
-  Activity,
-  CheckCircle2,
+  Activity,
+  CheckCircle2,
   Clock,
   Send,
   FileSignature,
@@ -240,13 +239,21 @@ function Reportes() {
               </div>
             </div>
           </div>
-          <button
-            onClick={() => addNewRow(activeTab)}
-            className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-lg flex items-center gap-2 border-b-4 border-emerald-800 active:border-b-0 active:translate-y-1 transition-all disabled:opacity-50"
-            disabled={loading}
-          >
-            <Plus size={16} /> Nuevo Reporte
-          </button>
+          <div className="flex items-center gap-4">
+            <Link 
+              to="/peticiones" 
+              className="bg-slate-800 hover:bg-slate-700 text-slate-300 px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-lg flex items-center gap-2 border border-slate-700 transition-all"
+            >
+              Buzón de Peticiones
+            </Link>
+            <button
+              onClick={() => addNewRow(activeTab)}
+              className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-lg flex items-center gap-2 border-b-4 border-emerald-800 active:border-b-0 active:translate-y-1 transition-all disabled:opacity-50"
+              disabled={loading}
+            >
+              <Plus size={16} /> Nuevo Reporte
+            </button>
+          </div>
         </div>
       </header>
 
